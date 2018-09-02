@@ -1,6 +1,8 @@
 class Solution:
 
     def convert(self, s, numRows):
+        if numRows == 1:
+            return s
         top_index = []
         index = 0
         t = (numRows - 1) * 2
@@ -10,18 +12,21 @@ class Solution:
             top_index.append(index)
             res += s[index]
             index += t
+        # index -= t
+        if index - t + 1 < len(s):
+            top_index.append(index)
 
         for i in list(range(1, numRows - 1)):
 
             for j in top_index:
                 t = j - i
-                if self.check_str(self, t, s):
+                if self.check_str(t, s):
                     res += s[t]
 
                 t = j + i
-                if not self.check_str(self, t, s):
-                    continue
-                res += s[t]
+                if self.check_str(t, s):
+                    # continue
+                    res += s[t]
 
         for i in top_index:
             t = i + numRows - 1
@@ -37,4 +42,7 @@ class Solution:
 
 
 t = Solution()
-print(t.convert(None, "PAYPALISHIRING", 4))
+assert t.convert("PAYPALISHIRING", 4) == 'PINALSIGYAHRPI'
+assert t.convert("PAYPALISHIRING", 3) == 'PAHNAPLSIIGYIR'
+assert t.convert("A", 1) == 'A'
+assert t.convert("ABCD", 3) == 'ABDC', t.convert("ABCD", 3)
