@@ -1,5 +1,4 @@
-import math
-
-print(math.pow(3, 361))
-print(math.pow(10, 80))
-print(math.pow(3, 361) // math.pow(10, 80))
+dp = []
+m = int(1e18)+1
+for i in range(2,m):
+    print(i)
