@@ -9,7 +9,7 @@ public class Solution {
         int l = 0, r = array.length - 1, m;
         while (l < r) {
             m = (l + r) / 2;
-            if (array[m] > array[l]) {
+            if (array[m] > array[r]) {
                 l = m+1;
             } else {
                 r = m;
