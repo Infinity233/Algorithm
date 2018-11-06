@@ -48,10 +48,4 @@ public class MergeSort {
             ++k;
         }
     }
-
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 6, 0, 4};
-        sort(arr);
-        System.out.println(Arrays.toString(arr));
-    }
 }
