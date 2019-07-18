@@ -28,16 +28,18 @@ public class QuickSort {
                 ++i;
             }
 
-            t = arr[i];
-            arr[i] = arr[j];
-            arr[j] = t;
+            swap(arr, i, j);
         }
         if (arr[left] > arr[j]) {
-            t = arr[left];
-            arr[left] = arr[j];
-            arr[j] = t;
+            swap(arr, left, j);
         }
 
         return j;
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int t = arr[i];
+        arr[i] = arr[j];
+        arr[j] = t;
     }
 }
