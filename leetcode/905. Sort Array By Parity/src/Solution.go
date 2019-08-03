@@ -1,4 +1,4 @@
-package src
+package main
 
 func sortArrayByParity(A []int) []int {
 
